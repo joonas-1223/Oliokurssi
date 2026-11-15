@@ -1,0 +1,42 @@
+
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+class Car {
+public:
+    string brand;
+    string model;
+    int yearModel;
+
+    Car(string merkki, string malli, int vuosi) {
+        brand = merkki;
+        model = malli;
+        yearModel = vuosi;
+    }
+
+    void printData() {
+        cout << brand << " " << model << " " << yearModel << endl;
+    }
+};
+
+int main() {
+
+    vector<Car> carList;
+
+    carList.push_back(Car("Toyota", "Corolla", 2020));
+    carList.push_back(Car("BMW", "320i", 2018));
+    carList.push_back(Car("Audi", "A4", 2022));
+
+    carList[0].printData();
+
+    cout << endl << "Kaikki autot:" << endl;
+
+
+    for (int i = 0; i < carList.size(); i++) {
+        carList[i].printData();
+    }
+
+    return 0;
+}
